@@ -7,6 +7,7 @@ import { useForm } from "react-hook-form";
 import { Input } from "../../components/Input";
 import { Button } from "../../components/Button";
 import { Header } from "../../components/Header"
+import { StyledForm } from "../../components/Input/Styled";
 
 function Home (){
 
@@ -20,7 +21,7 @@ function Home (){
         <>
             <Header route="/register" nameRoute="Cadastrar"/>
             <main>
-                <form onSubmit={handleSubmit(onSubmitLogin)}>
+                <StyledForm onSubmit={handleSubmit(onSubmitLogin)}>
                     <Input legend="Email" type="email" placeholder="Digite seu email" register={register} 
                     nameError="email" />
                     {errors.email?.message && <span>{errors.email.message}</span>}
@@ -30,7 +31,7 @@ function Home (){
                     {errors.password?.message && <span>{errors.password.message}</span>}
 
                     <Button type="submit" writing="Logar" />
-                </form>
+                </StyledForm>
             </main>
         </>
     )
